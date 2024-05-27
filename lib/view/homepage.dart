@@ -22,12 +22,13 @@ class Homepage extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: 100,
-                  width: 100,
+                  height: 250,
+                  width: 400,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(
-                              'https://mansharcart.com/image/${homeController.product.value.product.thumb}'))),
+                              'https://mansharcart.com/image/${homeController.product.value.product.thumb}'),
+                          fit: BoxFit.fill)),
                 ),
                 ListTile(
                   title: Text(
