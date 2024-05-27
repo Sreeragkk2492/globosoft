@@ -4,7 +4,7 @@ import 'package:globosoft/model/product.dart';
 
 class HomeController extends GetxController {
   var isLoading = true.obs;
-  var productdata = <dynamic>[].obs;
+ // var productdata = <dynamic>[].obs;
   // var product=Rxn<ProductClass>();
   var product = Product(
       success: false,
