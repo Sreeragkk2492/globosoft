@@ -16,7 +16,7 @@ class Myapp extends StatelessWidget {
       debugShowCheckedModeBanner: false, 
       home: Splash(),
          getPages: [
-        GetPage(name: '/home', page: () => Homepage()), // Replace with your home screen route
+        GetPage(name: '/home', page: () => Homepage()), 
       ],
     );
   }
