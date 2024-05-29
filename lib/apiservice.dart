@@ -11,7 +11,7 @@ import 'package:http/http.dart'as http;
     final response = await http.get(Uri.parse('https://mansharcart.com/api/getProduct/p_id/2050/key/123456789'));
 
     if (response.statusCode == 200) {
-      return Product.fromJson(jsonDecode(response.body) as Map<String,dynamic>);
+      return Product.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to load data');
     }

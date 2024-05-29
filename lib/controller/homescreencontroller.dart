@@ -4,9 +4,8 @@ import 'package:globosoft/model/product.dart';
 
 class HomeController extends GetxController {
   var isLoading = true.obs;
- // var productdata = <dynamic>[].obs;
-  // var product=Rxn<ProductClass>();
-  var product = Product(
+
+  var productdata = Product(
       success: false,
       product: ProductClass(
         id: '',
@@ -58,6 +57,7 @@ class HomeController extends GetxController {
         options: [],
         related: [],
       )).obs;
+
   final ApiService apiService;
 
   HomeController(this.apiService);
@@ -73,7 +73,7 @@ class HomeController extends GetxController {
       isLoading(true);
       var fetchedProduct = await apiService.fetchData();
       print('Fetched product: $fetchedProduct');
-      product.value = fetchedProduct;
+      productdata.value = fetchedProduct;
     } catch (e) {
       print('Error fetching data: $e');
     } finally {
