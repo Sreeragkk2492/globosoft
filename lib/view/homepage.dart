@@ -56,6 +56,7 @@ class Homepage extends StatelessWidget {
                   trailing: Text(homeController.productdata.value.product.reviews[index].dateAdded),
                 );
                 }),
+                Text(homeController.productdata.value.product.taxs.taxRate.toString())
               ],
             ),
           );
