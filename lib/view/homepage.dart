@@ -17,8 +17,8 @@ class Homepage extends StatelessWidget {
         if (homeController.isLoading.value) {
           return Center(child: CircularProgressIndicator());
         } else {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
+          return SingleChildScrollView( 
+            
             child: Column(
               children: [
                 Container(
@@ -45,6 +45,17 @@ class Homepage extends StatelessWidget {
                 Text('price: ${homeController.productdata.value.product.price}'),
                 Text('height: ${homeController.productdata.value.product.height}'),
                 Text('rating: ${homeController.productdata.value.product.rating}'), 
+                ListView.builder(
+                  shrinkWrap: true, 
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: homeController.productdata.value.product.reviews.length,
+                  itemBuilder: (context,index){
+                return ListTile(
+                  title: Text(homeController.productdata.value.product.reviews[index].author),
+                  subtitle: Text(homeController.productdata.value.product.reviews[index].text),
+                  trailing: Text(homeController.productdata.value.product.reviews[index].dateAdded),
+                );
+                }),
               ],
             ),
           );
